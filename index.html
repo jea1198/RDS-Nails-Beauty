@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="RDS Nails & Beauty — professional nail care and beauty treatments in Cabra West, Dublin 7. Book online via Treatwell." />
   <title>RDS Nails & Beauty | Dublin 7</title>
+  
+  <!-- ── 프리미엄 구글 폰트 동기화 (Lato 제거 ➡️ Inter+Playfair Display 탑재) ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -44,15 +47,16 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="home">
-      <!-- 배경 비디오 — autoplay, loop, muted, playsinline (모바일 인라인 재생) -->
-      <video class="hero__video" autoplay loop muted playsinline>
-        <source src="grok-video-c793e72b-49d9-4be0-87a2-9461cfd19d30-2.mp4" type="video/mp4">
+      <video class="hero__video hero__video--mobile" autoplay loop muted playsinline>
+        <source src="RDS Main Video.mp4" type="video/mp4">
       </video>
-      <!-- 텍스트 가독성을 위한 반투명 오버레이 -->
+      <video class="hero__video hero__video--desktop" autoplay loop muted playsinline>
+        <source src="RDS Main Video Desktop.mp4" type="video/mp4">
+      </video>
       <div class="hero__overlay"></div>
 
       <div class="hero__content fade-in">
-        <p class="hero__eyebrow">Dublin's Premier Nail Studio</p>
+        <p class="hero__eyebrow">RDS Nails & Beauty</p>
         <h1 class="hero__title">Beauty in<br><em>Every Detail</em></h1>
         <p class="hero__sub">Professional nail care &amp; beauty treatments<br class="br-desktop" />in the heart of Dublin 7</p>
         <a href="https://www.treatwell.ie/place/rds-nails-beauty/"
@@ -230,31 +234,15 @@
           <p class="section-desc">A glimpse into the artistry we bring to every appointment.</p>
         </div>
 
-        <!-- 카테고리 필터 제거 → 대표 이미지 6장만 단순 그리드로 표시 -->
         <div class="gallery__grid" id="galleryGrid">
-
-          <div class="gallery__item">
-            <img src="images/gallery1.jpg" alt="Nail art 1" class="gallery__img" />
-          </div>
-          <div class="gallery__item">
-            <img src="images/gallery2.jpg" alt="Nail art 2" class="gallery__img" />
-          </div>
-          <div class="gallery__item">
-            <img src="images/gallery3.jpg" alt="Nail art 3" class="gallery__img" />
-          </div>
-          <div class="gallery__item">
-            <img src="images/gallery4.jpg" alt="Nail art 4" class="gallery__img" />
-          </div>
-          <div class="gallery__item">
-            <img src="images/gallery5.jpg" alt="Nail art 5" class="gallery__img" />
-          </div>
-          <div class="gallery__item">
-            <img src="images/gallery6.jpg" alt="Nail art 6" class="gallery__img" />
-          </div>
-
+          <div class="gallery__item"><img src="images/gallery1.jpg" alt="Nail art 1" class="gallery__img" /></div>
+          <div class="gallery__item"><img src="images/gallery2.jpg" alt="Nail art 2" class="gallery__img" /></div>
+          <div class="gallery__item"><img src="images/gallery3.jpg" alt="Nail art 3" class="gallery__img" /></div>
+          <div class="gallery__item"><img src="images/gallery4.jpg" alt="Nail art 4" class="gallery__img" /></div>
+          <div class="gallery__item"><img src="images/gallery5.jpg" alt="Nail art 5" class="gallery__img" /></div>
+          <div class="gallery__item"><img src="images/gallery6.jpg" alt="Nail art 6" class="gallery__img" /></div>
         </div>
 
-        <!-- 인스타그램 CTA -->
         <div class="gallery__cta fade-in">
           <p class="gallery__cta-text">See more of our work on Instagram</p>
           <a href="https://www.instagram.com/rds.nails.hamilton?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -396,7 +384,6 @@
               </table>
             </div>
 
-            <!-- Social Media 블록 — Instagram + Facebook -->
             <div class="contact__block">
               <h3 class="contact__block-title">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
@@ -453,7 +440,6 @@
         <a href="https://www.treatwell.ie/place/rds-nails-beauty/" target="_blank" rel="noopener noreferrer">Book on Treatwell</a>
       </nav>
 
-      <!-- 소셜 미디어 아이콘 -->
       <div class="footer__social-wrap">
         <p class="footer__social-label">Social Media</p>
         <div class="footer__social">
@@ -472,7 +458,8 @@
         </div>
       </div>
 
-      <p class="footer__copy">&copy; <span id="year"></span> RDS Nails &amp; Beauty. All rights reserved.</p>
+      <!-- 카테고리 실무 디테일: 백엔드 지연 시 빈칸으로 남지 않도록 올해 연도 2026 삽입 -->
+      <p class="footer__copy">&copy; <span id="year">2026</span> RDS Nails &amp; Beauty. All rights reserved.</p>
     </div>
   </footer>
 
