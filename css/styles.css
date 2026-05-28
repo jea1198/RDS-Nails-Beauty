@@ -131,6 +131,17 @@ table { border-collapse: collapse; }
   transform: translateY(-2px);
 }
 
+.btn--gold {
+  background: var(--accent-gold);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(202,158,106,.3);
+}
+.btn--gold:hover {
+  background: var(--brown-500);
+  box-shadow: 0 6px 24px rgba(42,36,33,.25);
+  transform: translateY(-2px);
+}
+
 .btn--outline {
   background: transparent;
   color: var(--brown-500);
