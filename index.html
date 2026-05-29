@@ -34,6 +34,7 @@
 <li><a href="#gallery" class="nav__link">Gallery</a></li>
 <li><a href="#reviews" class="nav__link">Reviews</a></li>
 <li><a href="#contact" class="nav__link">Contact</a></li>
+<li><a href="policy.html" class="nav__link">Policy</a></li>
 <li>
 <a href="https://www.treatwell.ie/place/rds-nails-beauty/"
 target="_blank" rel="noopener noreferrer"
@@ -48,38 +49,51 @@ class="btn btn--nav">Book Now</a>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="home">
-<video class="hero__video hero__video--mobile" autoplay loop muted playsinline>
-<source src="RDS Main Video.mp4" type="video/mp4">
-</video>
-<video class="hero__video hero__video--desktop" autoplay loop muted playsinline>
-<source src="RDS Main Video Desktop.mp4" type="video/mp4">
-</video>
-<div class="hero__overlay"></div>
+  <video class="hero__video hero__video--mobile" autoplay loop muted playsinline>
+    <source src="RDS Main Video.mp4" type="video/mp4">
+  </video>
+  <video class="hero__video hero__video--desktop" autoplay loop muted playsinline>
+    <source src="RDS Main Video Desktop.mp4" type="video/mp4">
+  </video>
 
-<div class="hero__content fade-in">
-<svg class="hero__eyebrow-arc" viewBox="0 0 600 95" xmlns="http://www.w3.org/2000/svg" aria-label="Professional nail care and beauty treatments, Cabra West, Dublin 7, open 7 days a week">
-  <defs>
-    <path id="eyebrow-arc-1" d="M 10,55 Q 300,8 590,55"/>
-    <path id="eyebrow-arc-2" d="M 20,75 Q 300,35 580,75"/>
-  </defs>
-  <text fill="rgba(250,246,240,0.6)" font-size="13.5" font-family="'Inter', sans-serif" letter-spacing="2">
-    <textPath href="#eyebrow-arc-1" startOffset="50%" text-anchor="middle">PROFESSIONAL NAIL CARE &amp; BEAUTY TREATMENTS</textPath>
-  </text>
-  <text fill="rgba(250,246,240,0.6)" font-size="13.5" font-family="'Inter', sans-serif" letter-spacing="2.2">
-    <textPath href="#eyebrow-arc-2" startOffset="50%" text-anchor="middle">CABRA WEST  ·  DUBLIN 7  ·  OPEN 7 DAYS A WEEK</textPath>
-  </text>
-</svg>
-<h1 class="hero__title">Beauty in<br><em>Every Detail</em></h1>
-<p class="hero__tagline">RDS Nails &amp; Beauty</p>
-<a href="https://www.treatwell.ie/place/rds-nails-beauty/"
-target="_blank" rel="noopener noreferrer"
-class="btn btn--gold btn--lg">Book Now</a>
-</div>
-<a href="#services" class="hero__scroll" aria-label="Scroll to services">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-<polyline points="6 9 12 15 18 9"/>
-</svg>
-</a>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content fade-in">
+
+    <!-- Top Arc 정보 -->
+    <svg class="hero__eyebrow-arc" viewBox="0 0 600 95" xmlns="http://www.w3.org/2000/svg" aria-label="Professional nail care and beauty treatments...">
+      <defs>
+        <path id="eyebrow-arc-1" d="M 10,55 Q 300,8 590,55"/>
+        <path id="eyebrow-arc-2" d="M 20,75 Q 300,35 580,75"/>
+      </defs>
+      <text fill="rgba(250,246,240,0.75)" font-size="13.5" font-family="'Inter', sans-serif" letter-spacing="2.6">
+        <textPath href="#eyebrow-arc-1" startOffset="50%" text-anchor="middle">PROFESSIONAL NAIL CARE &amp; BEAUTY TREATMENTS</textPath>
+      </text>
+      <text fill="rgba(250,246,240,0.75)" font-size="13.5" font-family="'Inter', sans-serif" letter-spacing="2.8">
+        <textPath href="#eyebrow-arc-2" startOffset="50%" text-anchor="middle">CABRA WEST · DUBLIN 7 · OPEN 7 DAYS A WEEK</textPath>
+      </text>
+    </svg>
+
+    <!-- 메인 타이틀 - 2줄 구조 강화 -->
+    <h1 class="hero__title">
+      Beauty in<br>
+      <span class="hero__title-accent">Every Detail</span>
+    </h1>
+
+    <!-- RDS 태그라인 -->
+    <p class="hero__tagline">RDS Nails &amp; Beauty</p>
+
+    <!-- CTA 버튼 -->
+    <a href="https://www.treatwell.ie/place/rds-nails-beauty/"
+       target="_blank" rel="noopener noreferrer"
+       class="btn btn--gold btn--lg">Book Now</a>
+  </div>
+
+  <a href="#services" class="hero__scroll" aria-label="Scroll to services">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </a>
 </section>
 
 <!-- ===================== SERVICES ===================== -->

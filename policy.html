@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="RDS Nails & Beauty — Salon Policy. Please read our policies before booking your appointment." />
+<title>Policy | RDS Nails & Beauty</title>
+<link rel="icon" type="image/png" href="images/logo-symbol.png" />
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/asi0nyv.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+.policy-hero {
+  padding-top: calc(var(--nav-h) + 5rem);
+  padding-bottom: 3rem;
+  text-align: center;
+  background: var(--color-surface-soft);
+  border-bottom: 1px solid var(--beige-100);
+}
+.policy-hero__label {
+  font-family: var(--ff-sans);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+.policy-hero__title {
+  font-family: var(--ff-serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--color-ink-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.policy-hero__sub {
+  font-family: var(--ff-body);
+  font-size: .95rem;
+  color: var(--color-ink-secondary);
+  font-weight: 400;
+}
+.policy-content {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 5rem clamp(1.5rem, 6vw, 4rem) 7rem;
+}
+.policy-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(28,26,23,.07);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.policy-item:first-child { padding-top: 0; }
+.policy-item:last-child { border-bottom: none; }
+@media (max-width: 600px) {
+  .policy-item {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+}
+.policy-item__heading {
+  font-family: var(--ff-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-ink-primary);
+  letter-spacing: -0.01em;
+  padding-top: .1rem;
+}
+.policy-item__body {
+  font-family: var(--ff-body);
+  font-size: .95rem;
+  color: var(--color-ink-secondary);
+  line-height: 1.8;
+}
+.policy-item__body p + p { margin-top: .75rem; }
+.policy-note {
+  margin-top: 4rem;
+  padding: 2rem 2.5rem;
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--beige-100);
+}
+.policy-note p {
+  font-family: var(--ff-body);
+  font-size: .9rem;
+  color: var(--color-ink-secondary);
+  line-height: 1.75;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<header class="nav" id="nav">
+<div class="nav__inner">
+<a href="index.html" class="nav__logo">
+<img src="images/logo-main.png" alt="RDS Nails &amp; Beauty" class="nav__logo-img" />
+</a>
+
+<button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+
+<nav class="nav__menu" id="navMenu" aria-hidden="true">
+<ul class="nav__list">
+<li><a href="index.html#home" class="nav__link">Home</a></li>
+<li><a href="index.html#services" class="nav__link">Services</a></li>
+<li><a href="index.html#gallery" class="nav__link">Gallery</a></li>
+<li><a href="index.html#reviews" class="nav__link">Reviews</a></li>
+<li><a href="index.html#contact" class="nav__link">Contact</a></li>
+<li><a href="policy.html" class="nav__link active">Policy</a></li>
+<li>
+<a href="https://www.treatwell.ie/place/rds-nails-beauty/"
+target="_blank" rel="noopener noreferrer"
+class="btn btn--nav">Book Now</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- ===================== POLICY HERO ===================== -->
+<div class="policy-hero">
+<div class="container">
+<span class="policy-hero__label">Before You Visit</span>
+<h1 class="policy-hero__title">Salon Policy</h1>
+<p class="policy-hero__sub">Please take a moment to read our policies before booking your appointment.</p>
+</div>
+</div>
+
+<!-- ===================== POLICY CONTENT ===================== -->
+<section class="policy-content">
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Guarantee</h2>
+<div class="policy-item__body">
+<p>Regular nail polish services carry no guarantee. Acrylic, Shellac, and Gel services are guaranteed for 72 hours — free repairs are available for any salon-caused issues within this window.</p>
+<p>The salon is not responsible for damage or infections that occur after your visit.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Cancellation</h2>
+<div class="policy-item__body">
+<p>We kindly ask that you provide at least 24 hours' notice if you need to reschedule or cancel your appointment. This allows us to offer your slot to another client.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">No Show / No Call</h2>
+<div class="policy-item__body">
+<p>After 3 missed appointments without notice, clients will be required to either walk in or book with a non-refundable deposit paid in full prior to the appointment.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Late Arrival</h2>
+<div class="policy-item__body">
+<p>Please contact us if you are running late. We will always do our best to accommodate you, however we cannot guarantee your full service if you arrive more than 10 minutes after your scheduled time.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Refund</h2>
+<div class="policy-item__body">
+<p>Once services have been paid for, we consider that you have accepted and are happy with the completed result. We do not offer refunds after payment has been made.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Children</h2>
+<div class="policy-item__body">
+<p>Children under 12 must be accompanied and supervised by a responsible adult at all times. Parents and guardians are liable for any damages caused by children in the salon.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Gift Vouchers</h2>
+<div class="policy-item__body">
+<p>Gift vouchers are non-refundable, non-transferable, and cannot be exchanged for cash. Please present your voucher at the time of your appointment.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Service Refusal</h2>
+<div class="policy-item__body">
+<p>RDS Nails & Beauty reserves the right to refuse service to any client presenting with open wounds, contagious skin or nail conditions, or who displays inappropriate behaviour toward our staff.</p>
+</div>
+</div>
+
+<div class="policy-item">
+<h2 class="policy-item__heading">Health & Allergies</h2>
+<div class="policy-item__body">
+<p>Please inform us of any allergies or sensitivities before your appointment. If you experience any adverse reaction or infection following a visit, please contact us immediately.</p>
+<p>The salon is not responsible for lost or damaged personal belongings.</p>
+</div>
+</div>
+
+<div class="policy-note">
+<p>By booking an appointment with RDS Nails & Beauty, you agree to the above policies. Thank you for your understanding — we look forward to welcoming you.</p>
+</div>
+
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+<div class="container footer__inner">
+<img src="images/logo-full.png" alt="RDS Nails &amp; Beauty" class="footer__logo-img" />
+<p class="footer__addr">Unit 4/Block A, 2–4 Hamilton Gardens, Cabra West, Dublin 7</p>
+<nav class="footer__nav" aria-label="Footer navigation">
+<a href="index.html#home">Home</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#gallery">Gallery</a>
+<a href="index.html#reviews">Reviews</a>
+<a href="index.html#contact">Contact</a>
+<a href="policy.html">Policy</a>
+<a href="https://www.treatwell.ie/place/rds-nails-beauty/" target="_blank" rel="noopener noreferrer">Book on Treatwell</a>
+</nav>
+
+<div class="footer__social-wrap">
+<p class="footer__social-label">Social Media</p>
+<div class="footer__social">
+<a href="https://www.instagram.com/rds.nails.hamilton?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+target="_blank" rel="noopener noreferrer"
+class="footer__social-icon" aria-label="Instagram">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+<span>Instagram</span>
+</a>
+<a href="https://www.facebook.com/RDS.Nails.Hamilton"
+target="_blank" rel="noopener noreferrer"
+class="footer__social-icon" aria-label="Facebook">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+<span>Facebook</span>
+</a>
+</div>
+</div>
+
+<p class="footer__copy">&copy; <span id="year">2026</span> RDS Nails &amp; Beauty. All rights reserved.</p>
+</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
