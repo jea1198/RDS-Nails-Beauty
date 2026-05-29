@@ -29,7 +29,7 @@ Mobile-first. Elegant beauty aesthetic.
 --text-300: #A09690;
 
 /* Typography */
---ff-serif: 'Fraunces', Georgia, serif;
+--ff-serif: 'presti-display', Georgia, serif;
 --ff-body: 'Lora', Georgia, serif;
 --ff-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
@@ -93,10 +93,10 @@ margin-bottom: 1rem;
 .section-title {
 font-family: var(--ff-serif);
 font-size: clamp(2.2rem, 5vw, 3.5rem);
-font-weight: 500;
+font-weight: 400;
 color: var(--color-ink-primary);
-line-height: 1.3;
-letter-spacing: -0.02em;
+line-height: 1.2;
+letter-spacing: -0.01em;
 margin-bottom: 1.25rem;
 }
 
@@ -378,33 +378,40 @@ z-index: 0;
 .hero__content {
 position: relative;
 z-index: 1;
-max-width: 760px;
+max-width: 920px;
 padding-inline: 1.5rem;
 padding-top: calc(var(--nav-h) + 2rem);
 }
 
-.hero__eyebrow {
-font-size: .72rem;
-font-weight: 500;
-letter-spacing: .15em;
-text-transform: uppercase;
-color: rgba(250,246,240,.65);
-margin-bottom: 1.5rem;
+.hero__eyebrow-arc {
+width: clamp(300px, 65vw, 560px);
+margin-bottom: 1.75rem;
+overflow: visible;
 }
 
 .hero__title {
 font-family: var(--ff-serif);
-font-size: clamp(2.8rem, 8vw, 5.2rem);
-font-weight: 400;
+font-size: clamp(2.5rem, 10.5vw, 9.5rem);
+font-weight: 300;
 color: #FAF6F0;
-line-height: 1.2;
-margin-bottom: 1.75rem;
-letter-spacing: -0.02em;
+line-height: 1.1;
+margin-bottom: 1.5rem;
+letter-spacing: -0.01em;
 }
 .hero__title em {
 font-style: italic;
-font-weight: 400;
+font-weight: 300;
 color: var(--color-accent);
+}
+
+.hero__tagline {
+font-size: .65rem;
+font-weight: 400;
+letter-spacing: .22em;
+text-transform: uppercase;
+color: rgba(250,246,240,.5);
+margin-top: 1.5rem;
+margin-bottom: 2rem;
 }
 
 .hero__sub {
@@ -431,10 +438,10 @@ z-index: 1;
 .services__group { margin-bottom: clamp(3.5rem, 6vw, 5rem); }
 .services__group-title {
 font-family: var(--ff-serif);
-font-size: 1.4rem;
-font-weight: 500;
+font-size: 1.6rem;
+font-weight: 400;
 color: var(--color-ink-primary);
-letter-spacing: -0.02em;
+letter-spacing: -0.01em;
 margin-bottom: 1.75rem;
 padding-bottom: .75rem;
 border-bottom: 1px solid rgba(28,26,23,.08);
@@ -473,7 +480,7 @@ box-shadow: var(--shadow-md);
 
 .service-card__name {
 font-family: var(--ff-serif);
-font-size: 1.1rem;
+font-size: 1.25rem;
 font-weight: 400;
 color: var(--text-900);
 margin-bottom: .35rem;
@@ -689,12 +696,12 @@ padding-inline: 1.5rem;
 
 .book__title {
 font-family: var(--ff-serif);
-font-size: clamp(2.2rem, 6vw, 3.8rem);
+font-size: clamp(2.4rem, 6vw, 4.2rem);
 font-weight: 400;
 color: #fff;
 margin-bottom: 1.25rem;
-line-height: 1.2;
-letter-spacing: -0.02em;
+line-height: 1.15;
+letter-spacing: -0.01em;
 }
 
 .book__desc {
@@ -739,7 +746,7 @@ display: flex;
 align-items: center;
 gap: .6rem;
 font-family: var(--ff-serif);
-font-size: 1.1rem;
+font-size: 1.3rem;
 font-weight: 400;
 color: var(--text-900);
 margin-bottom: .75rem;

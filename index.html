@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="RDS Nails & Beauty — professional nail care and beauty treatments in Cabra West, Dublin 7. Book online via Treatwell." />
 <title>RDS Nails & Beauty | Dublin 7</title>
+<link rel="icon" type="image/png" href="images/logo-symbol.png" />
 <!-- ── 프리미엄 구글 폰트 동기화 (Lato 제거 ➡️ Inter+Playfair Display 탑재) ── -->
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/asi0nyv.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -54,9 +57,20 @@ class="btn btn--nav">Book Now</a>
 <div class="hero__overlay"></div>
 
 <div class="hero__content fade-in">
-<p class="hero__eyebrow">RDS Nails & Beauty</p>
+<svg class="hero__eyebrow-arc" viewBox="0 0 600 95" xmlns="http://www.w3.org/2000/svg" aria-label="Professional nail care and beauty treatments, Cabra West, Dublin 7, open 7 days a week">
+  <defs>
+    <path id="eyebrow-arc-1" d="M 10,55 Q 300,8 590,55"/>
+    <path id="eyebrow-arc-2" d="M 20,75 Q 300,35 580,75"/>
+  </defs>
+  <text fill="rgba(250,246,240,0.6)" font-size="13.5" font-family="'Inter', sans-serif" letter-spacing="2">
+    <textPath href="#eyebrow-arc-1" startOffset="50%" text-anchor="middle">PROFESSIONAL NAIL CARE &amp; BEAUTY TREATMENTS</textPath>
+  </text>
+  <text fill="rgba(250,246,240,0.6)" font-size="13.5" font-family="'Inter', sans-serif" letter-spacing="2.2">
+    <textPath href="#eyebrow-arc-2" startOffset="50%" text-anchor="middle">CABRA WEST  ·  DUBLIN 7  ·  OPEN 7 DAYS A WEEK</textPath>
+  </text>
+</svg>
 <h1 class="hero__title">Beauty in<br><em>Every Detail</em></h1>
-<p class="hero__sub">Professional nail care &amp; beauty treatments<br class="br-desktop" />in the heart of Dublin 7</p>
+<p class="hero__tagline">RDS Nails &amp; Beauty</p>
 <a href="https://www.treatwell.ie/place/rds-nails-beauty/"
 target="_blank" rel="noopener noreferrer"
 class="btn btn--gold btn--lg">Book Now</a>
