@@ -342,10 +342,36 @@ letter-spacing: .08em;
 }
 }
 
+/* ── Hero Entrance Animations ───────────────────────────── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* hero__content의 scroll-trigger를 우회 — 자식 요소가 직접 애니메이션 */
+.hero .fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.hero__eyebrow-arc {
+  animation: heroFadeUp 1s cubic-bezier(.25,1,.5,1) 0.15s both;
+}
+.hero__title {
+  animation: heroFadeUp 1s cubic-bezier(.25,1,.5,1) 0.4s both;
+}
+.hero__tagline {
+  animation: heroFadeUp 0.9s cubic-bezier(.25,1,.5,1) 0.65s both;
+}
+.hero__content .btn {
+  animation: heroFadeUp 0.9s cubic-bezier(.25,1,.5,1) 0.85s both;
+}
+
 /* ── Hero ───────────────────────────────────────────────── */
 .hero {
 position: relative;
-min-height: 100svh;
+min-height: 80svh;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -389,7 +415,7 @@ padding-bottom: 120px;
 
 .hero__eyebrow-arc {
 width: clamp(320px, 68vw, 580px);
-margin: 0 auto 4.5rem auto;
+margin: 0 auto 2rem auto;
 display: block;
 }
 
@@ -447,7 +473,7 @@ padding: 12px;
 padding-top: calc(var(--nav-h) + 3rem);
 padding-bottom: 140px;
 }
-.hero__eyebrow-arc { margin-bottom: 5.2rem; }
+.hero__eyebrow-arc { margin-bottom: 2.5rem; }
 .hero__tagline { margin-bottom: 4.5rem; }
 .hero__scroll { bottom: 3.2rem; }
 }
