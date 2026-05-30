@@ -1030,7 +1030,7 @@ background: rgba(255,255,255,.02);
 }
 @media (max-width: 560px) {
   .whatsapp-wrap { bottom: 1.5rem; right: 1.5rem; }
-  .whatsapp-tooltip { display: none; }
+  .whatsapp-tooltip { font-size: .65rem; padding: .5rem .85rem; }
   .whatsapp-float { padding: .75rem; }
   .whatsapp-float__label { display: none; }
 }
