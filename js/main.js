@@ -98,6 +98,15 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
   observer.observe(el);
 });
 
+/* ── WhatsApp tooltip: show at 2.5s, hide after 6s ───── */
+const waTooltip = document.querySelector('.whatsapp-tooltip');
+if (waTooltip) {
+  setTimeout(() => {
+    waTooltip.classList.add('visible');
+    setTimeout(() => waTooltip.classList.remove('visible'), 6000);
+  }, 2500);
+}
+
 /* ── Smooth anchor scroll (supplement CSS) ────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {

@@ -83,7 +83,7 @@ display: inline-block;
 font-family: var(--ff-sans);
 font-size: .72rem;
 font-weight: 500;
-letter-spacing: .15em;
+letter-spacing: .10em;
 text-transform: uppercase;
 color: var(--color-accent);
 margin-bottom: 1rem;
@@ -148,10 +148,13 @@ padding: 1.2rem 3rem;
 font-size: .92rem;
 letter-spacing: 2px;
 box-shadow: 0 6px 28px rgba(196,154,108,.35);
+transition: background 0.4s ease, color 0.4s ease, transform 0.4s cubic-bezier(.25,1,.5,1), box-shadow 0.4s ease;
 }
 .btn--gold:hover {
+background: var(--color-canvas);
+color: var(--color-ink-primary);
 transform: translateY(-4px);
-box-shadow: 0 12px 36px rgba(196,154,108,.45);
+box-shadow: 0 12px 36px rgba(196,154,108,.3);
 }
 
 .btn--outline {
@@ -415,7 +418,7 @@ padding-bottom: 120px;
 
 .hero__eyebrow-arc {
 width: clamp(320px, 68vw, 580px);
-margin: 0 auto 2rem auto;
+margin: 0 auto 1rem auto;
 display: block;
 }
 
@@ -441,12 +444,11 @@ margin-top: -0.35rem;
 .hero__tagline {
 font-family: var(--ff-sans);
 font-size: clamp(1rem, 1.7vw, 1.2rem);
-letter-spacing: 3px;
+letter-spacing: 1px;
 font-weight: 400;
-
 text-transform: uppercase;
 color: rgba(250,246,240,.88);
-margin: 0 0 3.8rem 0;
+margin: 1.8rem 0 3.8rem 0;
 }
 
 .hero__sub {
@@ -507,21 +509,12 @@ gap: 1.25rem;
 }
 
 .service-card {
-background: var(--color-surface-soft);
-border: 1px solid rgba(28,26,23,.08);
-border-radius: var(--radius-md);
-padding: 1.75rem 1.5rem;
+position: relative;
 display: flex;
 flex-direction: column;
 gap: 1.5rem;
 justify-content: space-between;
-box-shadow: 0 4px 20px rgba(96,90,82,.04);
 transition: all var(--transition);
-}
-.service-card:hover {
-transform: translateY(-4px);
-background: var(--color-canvas);
-box-shadow: var(--shadow-md);
 }
 
 .service-card__name {
@@ -933,50 +926,281 @@ background: rgba(255,255,255,.02);
 .footer__copy { font-size: .7rem; opacity: .4; margin-top: .75rem; }
 
 /* ── WhatsApp Floating Button ────────────────────────────── */
+.whatsapp-wrap {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .6rem;
+}
+
+.whatsapp-tooltip {
+  background: #fff;
+  color: var(--color-ink-primary);
+  font-family: var(--ff-sans);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  
+  box-shadow: 0 4px 16px rgba(96,90,82,.10);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.6s cubic-bezier(.25,1,.5,1), transform 0.6s cubic-bezier(.25,1,.5,1);
+  position: relative;
+}
+.whatsapp-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 테두리 화살표 */
+.whatsapp-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 1.1rem;
+  
+  border-top-color: var(--color-accent);
+  border-bottom-width: 0;
+}
+/* 흰색 채움 화살표 (테두리 위에 겹쳐서 안쪽만 흰색으로) */
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1.5px);
+  right: calc(1.1rem + 1px);
+  border: 5px solid transparent;
+  border-top-color: #fff;
+  border-bottom-width: 0;
+}
+
 .whatsapp-float {
-position: fixed;
-bottom: 2rem;
-right: 2rem;
-z-index: 200;
-display: flex;
-align-items: center;
-gap: .55rem;
-padding: .75rem 1.1rem .75rem .85rem;
-background: #25D366;
-color: #fff;
-border-radius: var(--radius-pill);
-box-shadow: 0 6px 24px rgba(37,211,102,.3);
-font-family: var(--ff-sans);
-font-size: .82rem;
-font-weight: 500;
-letter-spacing: .02em;
-transition: all var(--transition);
-overflow: hidden;
-max-width: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .75rem 1.1rem .75rem .85rem;
+  background: #25D366;
+  color: #fff;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 24px rgba(37,211,102,.3);
+  font-family: var(--ff-sans);
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  transition: all var(--transition);
+  overflow: hidden;
+  max-width: 3.2rem;
 }
 .whatsapp-float__icon {
-width: 1.5rem;
-height: 1.5rem;
-flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
 }
 .whatsapp-float__label {
-white-space: nowrap;
-max-width: 0;
-overflow: hidden;
-transition: max-width .4s cubic-bezier(.25, 1, .5, 1), opacity .3s;
-opacity: 0;
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width .4s cubic-bezier(.25, 1, .5, 1), opacity .3s;
+  opacity: 0;
 }
 .whatsapp-float:hover {
-background: #1ebe5d;
-transform: translateY(-4px);
-box-shadow: 0 12px 32px rgba(37,211,102,.45);
-max-width: 12rem;
+  background: #1ebe5d;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(37,211,102,.45);
+  max-width: 12rem;
 }
 .whatsapp-float:hover .whatsapp-float__label {
-max-width: 8rem;
-opacity: 1;
+  max-width: 8rem;
+  opacity: 1;
 }
-@media (max-width: 480px) {
-.whatsapp-float { bottom: 1.5rem; right: 1.5rem; padding: .75rem; }
-.whatsapp-float__label { display: none; }
-} 
+@media (max-width: 560px) {
+  .whatsapp-wrap { bottom: 1.5rem; right: 1.5rem; }
+  .whatsapp-tooltip { display: none; }
+  .whatsapp-float { padding: .75rem; }
+  .whatsapp-float__label { display: none; }
+}
+
+/* =========================================================
+   RDS PREMIUM UPGRADE: Brand Intro & Unified Card Grid
+   ========================================================= */
+
+/* ── Brand Intro (완충 영역 섹션) ── */
+.brand-intro {
+  text-align: center;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+  background: var(--white);
+}
+.brand-intro__text {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-ink-primary);
+  line-height: 1.5;
+  max-width: 32ch;
+  margin-inline: auto;
+}
+.brand-intro__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+  margin: 2.5rem auto 0;
+  opacity: 0.6;
+}
+
+/* ── 통합 카드 베이스: 카드 무드 완벽 통일 ── */
+.services__grid .service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  background: var(--color-surface-soft);
+  border: 1px solid rgba(28,26,23,.04);
+  box-shadow: 0 4px 30px rgba(96,90,82,.01);
+  transition: transform 0.4s cubic-bezier(.25, 1, .5, 1),
+              background-color 0.4s ease,
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+/* [Nails 그룹: 대형 카드] 시원하고 웅장한 대형 아치 도어 무드 */
+.services__grid .service-card:not(.service-card--mini) {
+  border-radius: 40px 40px var(--radius-md) var(--radius-md); 
+  padding: 2.6rem 1.8rem 1.8rem;
+}
+
+/* [Removals & Beauty 그룹: 미니 카드] 비율에 맞춘 귀여운 미디움 아치 룩 */
+.services__grid .service-card--mini {
+  border-radius: 20px 20px var(--radius-md) var(--radius-md) !important;
+  padding: 1.6rem 1.5rem 1.5rem !important;
+}
+
+/* ── 전 카드 공통 호버 인터랙션 수립 ── */
+.services__grid .service-card:hover {
+  transform: translateY(-6px);
+  background: #FFFFFF; 
+  box-shadow: 0 16px 40px rgba(42,36,33,.06);
+  border-color: rgba(202,158,106,.25);
+}
+
+/* 마우스 호버 시 내부 버튼 색상 자동 반전 효과 */
+.services__grid .service-card:hover .btn--outline {
+  background: var(--color-accent);
+  color: var(--color-canvas);
+  border-color: var(--color-accent);
+}
+
+/* ── Featured Card (인기 품목 전용 스포트라이트) ── */
+.services__grid .service-card--featured {
+  background: #FFFDFC; 
+  border: 1px solid rgba(202,158,106,.3);
+}
+
+.service-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-canvas);
+  font-family: var(--ff-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(202,158,106,.2);
+}
+
+/* ── Policy Page ─────────────────────────────────────────── */
+.policy-hero {
+  padding-top: calc(var(--nav-h) + 5rem);
+  padding-bottom: 3rem;
+  text-align: center;
+  background: var(--color-surface-soft);
+  border-bottom: 1px solid var(--beige-100);
+}
+.policy-hero__label {
+  font-family: var(--ff-sans);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+.policy-hero__title {
+  font-family: var(--ff-serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--color-ink-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.policy-hero__sub {
+  font-family: var(--ff-body);
+  font-size: .95rem;
+  color: var(--color-ink-secondary);
+  font-weight: 400;
+}
+.policy-content {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 5rem clamp(1.5rem, 6vw, 4rem) 7rem;
+}
+.policy-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(28,26,23,.07);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.policy-item:first-child { padding-top: 0; }
+.policy-item:last-child { border-bottom: none; }
+@media (max-width: 600px) {
+  .policy-item {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+}
+.policy-item__heading {
+  font-family: var(--ff-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-ink-primary);
+  letter-spacing: -0.01em;
+  padding-top: .1rem;
+}
+.policy-item__body {
+  font-family: var(--ff-body);
+  font-size: .95rem;
+  color: var(--color-ink-secondary);
+  line-height: 1.8;
+}
+.policy-item__body p + p { margin-top: .75rem; }
+.policy-note {
+  margin-top: 4rem;
+  padding: 2rem 2.5rem;
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--beige-100);
+}
+.policy-note p {
+  font-family: var(--ff-body);
+  font-size: .9rem;
+  color: var(--color-ink-secondary);
+  line-height: 1.75;
+  text-align: center;
+}
