@@ -372,15 +372,24 @@ letter-spacing: .08em;
 }
 
 /* ── Hero ───────────────────────────────────────────────── */
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
 .hero {
 position: relative;
-min-height: 80svh;
+min-height: 95svh;
 display: flex;
 align-items: center;
 justify-content: center;
 text-align: center;
 overflow: hidden;
 background-color: var(--beige-50);
+}
+
+@media (min-width: 768px) {
+  .hero { min-height: 80svh; }
 }
 
 .hero__video {
