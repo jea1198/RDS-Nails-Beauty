@@ -1,5 +1,12 @@
 /* RDS Nails & Beauty — main.js */
 
+/* ── GA4 custom event tracking ───────────────────────── */
+document.querySelectorAll('[data-ga]').forEach(el => {
+  el.addEventListener('click', () => {
+    if (typeof gtag === 'function') gtag('event', el.dataset.ga);
+  });
+});
+
 /* ── Footer year ──────────────────────────────────────── */
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -105,6 +112,20 @@ if (waTooltip) {
     waTooltip.classList.add('visible');
     setTimeout(() => waTooltip.classList.remove('visible'), 6000);
   }, 2500);
+}
+
+/* ── Mobile sticky bar: visible after hero scrolled out ──
+   index-B.html only — guard keeps index.html unaffected    */
+const stickyBar   = document.querySelector('.mobile-sticky-bar');
+const heroSection = document.querySelector('.hero');
+const waWrap      = document.querySelector('.whatsapp-wrap');
+
+if (stickyBar && heroSection) {
+  new IntersectionObserver(([entry]) => {
+    const pastHero = !entry.isIntersecting;
+    stickyBar.classList.toggle('visible', pastHero);
+    if (waWrap) waWrap.classList.toggle('wa-hidden', pastHero);
+  }, { threshold: 0 }).observe(heroSection);
 }
 
 /* ── Smooth anchor scroll (supplement CSS) ────────────── */

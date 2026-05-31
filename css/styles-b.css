@@ -1,0 +1,183 @@
+/* ========================================================
+   RDS Nails & Beauty — B Version Override
+   A/B 테스트: WhatsApp을 두 번째 CTA로 히어로에 노출
+   ======================================================== */
+
+/* ── Hero: 듀얼 CTA 버튼 그룹 ─────────────────────────── */
+.hero__cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* WhatsApp 버튼 (히어로용 — 반투명 화이트 아웃라인) */
+.btn--wa {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+.btn--wa:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.9);
+  transform: translateY(-3px);
+}
+
+/* WhatsApp 버튼 (Book 섹션용 — 그린) */
+.btn--wa-light {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37,211,102,.25);
+  transition: background 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+.btn--wa-light:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(37,211,102,.35);
+}
+
+/* 모바일: 버튼 세로 스택 */
+@media (max-width: 560px) {
+  .hero__cta-group {
+    flex-direction: column;
+    gap: .75rem;
+    width: 100%;
+  }
+  .hero__cta-group .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ── Book 섹션: 두 옵션 레이아웃 ──────────────────────── */
+.book__options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+.book__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .85rem;
+}
+
+.book__option-label {
+  font-family: var(--ff-sans);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(250,246,240,.5);
+}
+
+.book__option-note {
+  font-size: .72rem;
+  color: rgba(250,246,240,.4);
+  letter-spacing: .04em;
+}
+
+.book__option-divider {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(250,246,240,.3);
+  padding: 0 .5rem;
+}
+
+@media (max-width: 600px) {
+  .book__options {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .book__option-divider {
+    display: none;
+  }
+  .book__option .btn {
+    min-width: 260px;
+  }
+}
+
+/* ── 서비스 섹션: 가격 안내 문구 ──────────────────────── */
+.services__price-notice {
+  margin-top: 1.25rem;
+  font-family: var(--ff-sans);
+  font-size: .78rem;
+  color: var(--color-ink-secondary);
+  letter-spacing: .02em;
+}
+.services__price-notice a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── 모바일 하단 고정 바 ──────────────────────────────── */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  padding: .75rem 1.25rem calc(.75rem + env(safe-area-inset-bottom));
+  background: rgba(250,246,240,.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -2px 16px rgba(28,26,23,.08);
+  gap: .75rem;
+}
+
+.sticky-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  font-family: var(--ff-sans);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  padding: .8rem 1rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.sticky-btn:active { transform: scale(.97); opacity: .85; }
+
+.sticky-btn--chat {
+  flex: 1;
+  background: transparent;
+  color: #1a9e4e;
+  border: 1.5px solid #25D366;
+}
+
+.sticky-btn--book {
+  flex: 2;
+  background: var(--color-accent);
+  color: var(--color-canvas);
+}
+
+@media (max-width: 768px) {
+  /* JS toggles .visible — never shown until hero is scrolled past */
+  .mobile-sticky-bar { display: none; }
+  .mobile-sticky-bar.visible { display: flex; }
+
+  /* When sticky bar is up, hide the floating WA (Chat button covers it) */
+  .whatsapp-wrap.wa-hidden { display: none; }
+
+  body { padding-bottom: 72px; }
+}
